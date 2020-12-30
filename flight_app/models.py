@@ -7,6 +7,6 @@ class Airport(models.Model):
     town = models.TextField(max_length=100)
 
     def __str__(self):
-        return self.name, self.town
+        return f'{self.name} {self.town}'
 
 
