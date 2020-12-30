@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aitports</title>
+</head>
+<body>
+{% block content %}
+    {% for airport in airports %}
+        {{ airport.name }}
+        {{ airport.town }}
+        <br>
+    {% endfor %}
+
+{% endblock %}
+</body>
+</html>
