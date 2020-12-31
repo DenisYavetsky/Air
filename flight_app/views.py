@@ -5,7 +5,7 @@ from django.shortcuts import render
 from .forms import UploadFileForm
 
 # Imaginary function to handle an uploaded file.
-from .parse import read_file
+from .parse import read_file, call_API
 from .models import Airport
 
 
@@ -16,6 +16,11 @@ def main(request):
 def airports_list(request):
     airports = Airport.objects.all()
     return render(request, 'Airports.html', context={'airports': airports})
+
+
+def airport_info(request, icao_code):
+    a = call_API(icao_code)
+    return render(request, 'Airport.html', context={'departures': a['departures'], 'arrivals': a['arrivals']})
 
 
 def upload_file(request):

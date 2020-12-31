@@ -9,6 +9,7 @@
     {% for airport in airports %}
         {{ airport.name }}
         {{ airport.town }}
+        <a href="{{ airport.get_icao_code }}">{{ airport.icao_code }}</a>
         <br>
     {% endfor %}
 
